@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
-class RecursividadI{
-	public static void cadenaInvertidaRec(String cadena, int x, String palabra){
-		
+class CadInver{
+	public static void Invertir(String cadena, int x, String inver){
 		if(x>0) {
-			palabra = palabra + cadena.substring(x-1, x);
-			cadenaInvertidaRec(cadena, x-1, palabra);
+			inver = inver + cadena.substring(x-1, x);
+			Invertir(cadena, x-1, inver);
 		}else {
-			System.out.println(palabra);
+			System.out.println(inver);
 		}
 	}
 }
@@ -15,16 +14,14 @@ public class CadenaFormaInversa {
 
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner (System.in);
-		int x = 0;
 		String cadena = "";
-		
-		
+		System.out.println("=Programa que invierte una cadena dada=");
 		do {
-			System.out.println("Ingrese la frase o palabra: ");
+			System.out.println("Ingresa la cadena que desea invertir");
 			cadena = entrada.nextLine();
-			x = cadena.length();
-			RecursividadI.cadenaInvertidaRec(cadena, x, "");
-		}while(x <= 0);
+			
+			CadInver.Invertir(cadena, cadena.length(), "");
+		}while(cadena.length()<= 0);
 
 
 	}
