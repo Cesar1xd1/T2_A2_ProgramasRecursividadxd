@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 class MetodoRecursivo implements correccion{
 	
 	public void divisores(int n, int m) {
